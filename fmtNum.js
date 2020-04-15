@@ -1,5 +1,5 @@
-function DX(n) {
-  if (!/^(0|[1-9]\d*)(\.\d+)?$/.test(n)) {return '非法数据'}
+export default function fmtNum(n) {
+  if (!/^(0|[1-9]\d*)(\.\d+)?$/.test(n)) return '非法数据'
   let unit = '京亿万仟佰拾兆万仟佰拾亿仟佰拾万仟佰拾元角分';
   let str = '';
   n += '00';
@@ -13,4 +13,3 @@ function DX(n) {
   }
   return str.replace(/零(仟|佰|拾|角)/g, '零').replace(/(零)+/g, '零').replace(/零(兆|万|亿|元)/g, '$1').replace(/(兆|亿)万/g, '$1').replace(/(京|兆)亿/g, '$1').replace(/(京)兆/g, '$1').replace(/(京|兆|亿|仟|佰|拾)(万?)(.)仟/g, '$1$2零$3仟').replace(/^元零?|零分/g, '').replace(/(元|角)$/g, '$1整');
 }
-console.log(DX(999.88))
