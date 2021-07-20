@@ -1,4 +1,4 @@
-export default function fmtNum(n) {
+export default (n) => {
   if (!/^(0|[1-9]\d*)(\.\d+)?$/.test(n)) return '非法数据'
   let unit = '京亿万仟佰拾兆万仟佰拾亿仟佰拾万仟佰拾元角分';
   let str = '';
